@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="Content-Language" content="pl"/>
+        <meta name="Author" content="Wiktor Wewersajtys"/>
+        <title>Największe mosty świata</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="kolorujtlo.js"></script>
+        <script src="timedate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body onload="startclock()">
+        <header>
+            <span class="topText">
+                <h1><b>Największe mosty świata</b></h1>
+                <h2>Hejka, na tej stronie przedstawię wam największe mosty świata jakie znam.</h2>
+                <h2>Wszystkie które znam i pamiętam znajdują się po lewej stronie w MENU</h2>
+                <h3>Jeśli o jakimś zapomniałem to dajcie mi znać w formularzu na dole :)</h3>
+            </span>
+        </header>
+        <main>
+            <div id="zmianatla">
+                <h5>Chcesz zmienić tło?</h5>
+                <form method="post" name="background">
+                    <input type="button" value="oryginalny" onclick="changeBackground('#F0F0F0')">
+                    <input type="button" value="zółty" onclick="changeBackground('#FFF000')">
+                    <input type="button" value="czarny" onclick="changeBackground('#000000')">
+                    <input type="button" value="biały" onclick="changeBackground('#FFFFFF')">
+                    <input type="button" value="zielony" onclick="changeBackground('#00FF00')">
+                    <input type="button" value="niebieski" onclick="changeBackground('#0000FF')">
+                    <input type="button" value="pomarańczowy" onclick="changeBackground('#FF8000')">
+                    <input type="button" value="szary" onclick="changeBackground('#C0C0C0')">
+                    <input type="button" value="czerwony" onclick="changeBackground('#FF0000')">
+                </form>
+            </div>
+            
+            <div id="dataiczas">
+                <h5>Aktualny czas:</h5>
+                <div id="data"></div>
+                <div id="zegarek"></div>
+            </div>
+            <table border="line">
+                <tr>
+                    <td>
+                        <div class="mytop">
+                            <h2><i>Moje top 5 i wasze propozycje</i></h2>
+                            <ul>
+                                <li>
+                                    <a href="./index.html">Propozycje użytkowników</a>
+                                </li>
+                                <li>
+                                    <a href="./mytop1.html">Hongkong-Zhuhai-Makau Bridge</a>
+                                </li>
+                                <li>
+                                    <a href="./mytop2.html">Qingdao Haiwan Bridge</a>
+                                </li>
+                                <li>
+                                    <a href="./mytop3.html">Lake Pontchartrain Causeway</a>
+                                </li>
+                                <li>
+                                    <a href="./mytop4.html">Manchac Swamp Bridge</a>
+                                </li>
+                                <li>
+                                    <a href="./mytop5.html">Hangzhou Bay Bridge</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>Qingdao Haiwan Bridge</h2>
+                        <p>
+                            <img src="./images/Qingdao_Haiwan_Bridge.png" style="float:right" width="200" height="90">
+                            <img src="./images/Qingdao_Haiwan_Bridge2.png" style="float:left" width="200" height="90">
+                            Most Qingdao Haiwan (chiń. upr. 青岛海湾大桥; pinyin Qīngdǎo Hǎiwān Dàqiáo) – most drogowy przez zatokę Jiaozhou w Chinach w 
+                            prowincji Shandong pomiędzy centrum miasta Qingdao i jego dzielnicą Huangdao. Ma łączną długość 42,5 km. Do 2018 był 
+                            najdłuższym mostem na świecie wybudowanym nad wodą (→ Most Hong Kong-Zhuhai-Macao)[1]. Na moście znajdują się dwie 
+                            trzypasmowe jezdnie. Zaprojektowano go tak, aby wytrzymał trzęsienia ziemi, tajfuny i uderzenia statku o wyporności do 
+                            300 tys. ton. Budowany był przez cztery lata, równocześnie z obu stron; został połączony w styczniu 2011 roku. Budowę 
+                            ukończono w połowie 2011 roku[2], a oddano do użytku 30 czerwca 2011 r.[3]
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <div id="animations">
+            <div id="animacjaTestowa1" class="test-block">Kliknij, a się powiększe</div>
+            <script>
+                $("#animacjaTestowa1").on("click", function(){
+                    $(this).animate({
+                        width: "500px",
+                        opacity: 0.4,
+                        fontSize: "3em",
+                        borderWidth: "10px"
+                    }, 1500);
+                });
+            </script>
+            <div id="animacjaTestowa2" class="test-block">Najedź kursorem, a się powiększy</div>
+            <script>
+                $("#animacjaTestowa2").on({
+                    "mouseover" : function(){
+                        $(this).animate({
+                            width: 300
+                        }, 800);
+                    },
+                    "mouseout" : function(){
+                        $(this).animate({
+                            width: 200
+                        }, 800);
+                    }
+                });
+            </script>
+            <div id="animacjaTestowa3" class="test-block">Klikaj, abym urósł</div>
+            <script>
+                $("#animacjaTestowa3").on("click", function(){
+                    if(!$(this).is(":animated")){
+                        $(this).animate({
+                            width: "+=" + 50,
+                            height: "+=" + 10,
+                            opacity: "-=" + 0.1,
+                            duration: 3000
+                        });
+                    }
+                });
+            </script>
+        </div>
+        <aside>
+            <h2><u>Kontakt</u></h2>
+            <form action="mailto:wikto-wewersajtys@uwm.pl" method="post" enctype="text/plain">
+                Imię: <input type="text" name="imie"><br>
+                Email: <input type="email" name="email"><br>
+                Wiadomość:<br>
+                <textarea name="wiadomosc" rows="5" cols="40"></textarea><br>
+                <input type="submit" value="Wyślij">
+            </form>
+        </aside>
+        <footer>
+            <div class="AuthorName">
+                &copy; Wiktor Wewersajtys 2023
+            </div>
+        </footer>
+    </body>
+</html>
