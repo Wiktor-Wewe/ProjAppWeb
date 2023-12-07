@@ -1,4 +1,7 @@
 <?php
+    $login = "wiktor";
+    $pass = "wiktor123";
+
     $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = '';

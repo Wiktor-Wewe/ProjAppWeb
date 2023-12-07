@@ -3,17 +3,7 @@
     {
         $id_clear = htmlspecialchars($id);
  
-        // Create a connection
-        $dbhost = 'localhost';
-        $dbuser = 'root';
-        $dbpass = '';
-        $dbname = 'moja_strona';
-        $link = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-        // Check the connection
-        if (!$link) {
-            die('Nie udało się połączyć z bazą danych: ' . mysqli_connect_error());
-        }
+        include("./cfg.php");
 
         // Use prepared statement to prevent SQL injection
         $query = "SELECT * FROM page_list WHERE id = ? LIMIT 1";

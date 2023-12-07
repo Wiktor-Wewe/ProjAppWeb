@@ -1,7 +1,9 @@
 <?php
+    session_start();
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-    include('./cfg.php');
     include('./showpage.php');
+    include('./admin/admin.php');
+    
     if($_GET['idp'] == '') $strona = PokazPodstrone(2);
     if($_GET['idp'] == 'podstrona1') $strona = PokazPodstrone(3);
     if($_GET['idp'] == 'podstrona2') $strona = PokazPodstrone(4);
@@ -9,6 +11,22 @@
     if($_GET['idp'] == 'podstrona4') $strona = PokazPodstrone(6);
     if($_GET['idp'] == 'podstrona5') $strona = PokazPodstrone(7);
     if($_GET['idp'] == 'filmy') $strona = PokazPodstrone(1);
+    if($_GET['idp'] == 'admin'){
+        if($_SESSION['login'] == null || $_SESSION['pass'] == null){
+            $strona = FormularzLogowania();
+        }
+        else if($_SESSION['login'] != $login || $_SESSION['pass'] != $pass){
+            echo '<div class="zalogowany">login albo hasło są błędne</div>';
+            $strona = FormularzLogowania();
+        }
+        else{
+            echo '<div class="zalogowany">ZALOGOWANY DO ADMINA</div>
+                    <form action="wyloguj.php" method="post">
+                        <input type="submit" value="Wyloguj">
+                    </form>';
+            $strona = ListaPodstron($link);
+        }
+    } 
 
 ?>
 <html>

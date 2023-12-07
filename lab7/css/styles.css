@@ -143,3 +143,31 @@ footer {
     -ms-user-select: none;
     user-select: none;
 }
+
+.zalogowany{
+    color: #ff0000;
+    text-align: center;
+}
+
+.logowanie{
+    margin: auto;
+}
+
+.heading{
+    text-align: center;
+}
+
+.lista_podstron table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lista_podstron th, .lista_podstron td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.lista_podstron th {
+    background-color: #f2f2f2;
+}
