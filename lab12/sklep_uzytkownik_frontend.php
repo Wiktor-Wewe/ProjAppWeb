@@ -8,7 +8,7 @@ require_once 'sklep_uzytkownik_backend.php';
 // Stwórz instancję systemu zarządzania produktami
 $systemProduktow = new SystemZarzadzaniaProduktami('localhost', 'root', '', 'moja_strona');
 
-// Utwórz instancję koszyka (zakładam, że klasa Koszyk jest już zdefiniowana)
+// Utwórz instancję koszyka
 $koszyk = new Koszyk();
 
 
@@ -46,7 +46,7 @@ foreach ($produktyRaw as $produktRaw) {
         $produktRaw->tytul,
         $produktRaw->cena_netto,
         $produktRaw->podatek_vat,
-        $produktRaw->zdjecie,  // Zakładam, że obraz jest zakodowany jako base64
+        $produktRaw->zdjecie,
         'jpg'  // Stałe rozszerzenie pliku
     );
 }
@@ -72,7 +72,6 @@ foreach ($produktyRaw as $produktRaw) {
                 // Sprawdź rozszerzenie pliku obrazu
                 $extension = pathinfo($produkt->tytul, PATHINFO_EXTENSION);
 
-                // Określ typ MIME na podstawie rozszerzenia pliku
                 $mimeTypes = [
                     'jpg' => 'image/jpeg',
                     'jpeg' => 'image/jpeg',

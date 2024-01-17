@@ -69,6 +69,15 @@
                     <tr>
                         <td><a href="index.php">MOSTY</a></td>
                     </tr>
+                    <tr>
+                        <td><a href="contact.php?action=pokaz">KONTAKT</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="contact.php?action=haslo">HASŁO</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="index.php?idp=admin">ADMIN</a></td>
+                    </tr>
                 </table>
             </div>
         <div id="dataiczas">
